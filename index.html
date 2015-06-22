@@ -162,6 +162,17 @@
         </span>
 
         
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/python/">python</a>
+
+              
+              
+
+            
+          </span>
+        
 
         
           
@@ -183,7 +194,7 @@
 
       
         
-          <p>python&#x5355;&#x4F8B;&#x88C5;&#x9970;&#x5668;</p>
+          <p>&#x5355;&#x4F8B;&#x662F;&#x8BBE;&#x8BA1;&#x7ED3;&#x6784;&#x4E2D;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x6A21;&#x5F0F;&#x3002;&#x5728;&#x5DE5;&#x7A0B;&#x4E2D;&#xFF0C;&#x786E;&#x4FDD;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3001;&#x786E;&#x4FDD;&#x65E5;&#x5FD7;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;&#x7B49;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5355;&#x4F8B;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4F7F;&#x7528;python&#x7684;&#x88C5;&#x9970;&#x5668;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;&#x53EF;&#x4EE5;&#x88C5;&#x9970;&#x7C7B;&#x548C;&#x51FD;&#x6570;&#x3002;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span><br><span class="line">singleton decorator</span><br><span class="line"></span><br><span class="line">usage:</span><br><span class="line"></span><br><span class="line">decorete function: this function just be executed once.</span><br><span class="line">@singlenton</span><br><span class="line">def fun():</span><br><span class="line">    # do something</span><br><span class="line">    return</span><br><span class="line"></span><br><span class="line">decorate class: this class just have one instance.</span><br><span class="line">@singleton</span><br><span class="line">class MyClass(object):</span><br><span class="line">    def __init__():</span><br><span class="line">        pass</span><br><span class="line">&quot;&quot;&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    instances = {}</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_singleton</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls(*args, **kw)</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line">    <span class="keyword">return</span> _singleton</span><br></pre></td></tr></table></figure></p>
 
         
       
@@ -364,14 +375,14 @@
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
