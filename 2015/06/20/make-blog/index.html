@@ -36,7 +36,7 @@
     analytics: {
       google: ''
     },
-    sidebar: 'post'
+    sidebar: 'hide'
   };
 </script>
 
@@ -104,6 +104,14 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags">
             <i class="menu-item-icon icon-tags"></i> <br />
@@ -152,6 +160,13 @@
         
 
         
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/make-blog/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/20/make-blog/"></span>
+            </a>
+          </span>
           
         
       </div>
@@ -207,7 +222,7 @@
 <h3 id="&#x65F6;&#x95F4;&#x6807;&#x7B7E;">&#x65F6;&#x95F4;&#x6807;&#x7B7E;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line">default_category: uncategorized <span class="comment"># &#x9ED8;&#x8BA4;&#x5206;&#x7C7B;</span></span><br><span class="line">category_map:                   <span class="comment"># &#x5206;&#x7C7B;&#x522B;&#x540D;</span></span><br><span class="line">tag_map:                        <span class="comment"># &#x6807;&#x7B7E;&#x522B;&#x540D;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line">date_format: YYYY-MM-DD         <span class="comment"># &#x65E5;&#x671F;&#x683C;&#x5F0F;</span></span><br><span class="line">time_format: HH:mm:ss           <span class="comment"># &#x65F6;&#x95F4;&#x683C;&#x5F0F;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line">per_page: <span class="number">10</span>                    <span class="comment"># &#x6BCF;&#x9875;&#x663E;&#x793A;&#x6587;&#x7AE0;&#x6570;&#x91CF;</span></span><br><span class="line">pagination_dir: page            <span class="comment"># &#x5206;&#x9875;&#x76EE;&#x5F55;</span></span><br></pre></td></tr></table></figure>
 <h2 id="&#x535A;&#x5BA2;&#x90E8;&#x7F72;">&#x535A;&#x5BA2;&#x90E8;&#x7F72;</h2><h3 id="&#x90E8;&#x7F72;&#x914D;&#x7F6E;">&#x90E8;&#x7F72;&#x914D;&#x7F6E;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/wangzhilong/wangzhilong.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>&#x5176;&#x4E2D;respository&#x5C31;&#x662F;github&#x4E0A;&#x521B;&#x5EFA;&#x7684;&#x4ED3;&#x5E93;&#x3002;banch&#x662F;&#x8BE5;&#x4ED3;&#x5E93;&#x7684;&#x5206;&#x652F;&#x3002;&#xFF08;&#x628A;&#x7528;&#x6237;&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x7528;&#x6237;&#xFF09;</p>
-<h3 id="&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;">&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;</h3><p>$ hexo generate</p>
+<h3 id="&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;">&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <h3 id="&#x90E8;&#x7F72;">&#x90E8;&#x7F72;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>&#x5982;&#x679C;&#x5728;&#x90E8;&#x7F72;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x9047;&#x5230;&#x4E0B;&#x9762;&#x9519;&#x8BEF;&#xFF1A;</p>
 <blockquote>
@@ -216,7 +231,7 @@
 <p>&#x6267;&#x884C;&#x4E0B;&#x9762;&#x8BED;&#x53E5;&#x540E;&#xFF0C;&#x518D;&#x90E8;&#x7F72;.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>&#x90E8;&#x7F72;&#x5B8C;&#x540E;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;:<a href="http://wangzhilong.github.io/.&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x535A;&#x5BA2;&#x4E86;&#x3002;" target="_blank" rel="external">http://wangzhilong.github.io/.&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x535A;&#x5BA2;&#x4E86;&#x3002;</a></p>
 <h2 id="&#x5199;&#x65B0;&#x6587;&#x7AE0;">&#x5199;&#x65B0;&#x6587;&#x7AE0;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new make_blog</span><br></pre></td></tr></table></figure>
-<p>make_blog&#x662F;&#x6587;&#x7AE0;&#x7684;&#x6807;&#x9898;&#x3002;&#x5199;&#x5B8C;&#x65B0;&#x6587;&#x7AE0;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x90E8;&#x7F72;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x770B;&#x5230;&#x4E86;&#x3002;</p>
+<p>make_blog&#x662F;&#x6587;&#x7AE0;&#x7684;&#x6807;&#x9898;&#x3002;&#x5199;&#x5B8C;&#x65B0;&#x6587;&#x7AE0;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x90E8;&#x7F72;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x770B;&#x5230;&#x4E86;&#x3002;<br><em>&#x6CE8;</em>:&#x63A8;&#x8350;&#x4E00;&#x4E2A;&#x5728;&#x7EBF;&#x7528;markdown&#x5199;&#x6587;&#x7AE0;&#xFF1A;<a href="https://www.zybuluo.com/" target="_blank" rel="external">https://www.zybuluo.com/</a></p>
 <h2 id="&#x53C2;&#x8003;&#x6587;&#x7AE0;">&#x53C2;&#x8003;&#x6587;&#x7AE0;</h2><p>&#x3010;1&#x3011; <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a><br>&#x3010;2&#x3011; <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a></p>
 
       
@@ -229,11 +244,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2015/06/22/singleton-decorate/">python单例装饰器</a>
+            
           </div>
 
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/06/20/hello-world/">Hello World</a>
             
           </div>
         </div>
@@ -250,6 +265,10 @@
 
     
       <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/06/20/make-blog/"
+               data-title="搭建个人博客" data-url="http://yoursite.com/2015/06/20/make-blog/">
+          </div>
         
       </div>
     
@@ -301,15 +320,15 @@
           </div>
 
           <div class="site-state-item site-state-categories">
-            
+            <a href="/categories">
               <span class="site-state-item-count">0</span>
               <span class="site-state-item-name">分类</span>
-              
+              </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -319,6 +338,12 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/wangzhilong2011" target="_blank">新浪微博</a>
+            </span>
+            
           
         </div>
 
@@ -552,11 +577,24 @@
 
   
   
-  
 
   
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wangzhilong-blog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
 
 
   
