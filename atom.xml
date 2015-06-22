@@ -37,7 +37,7 @@
     <link href="http://yoursite.com/2015/06/20/make-blog/"/>
     <id>http://yoursite.com/2015/06/20/make-blog/</id>
     <published>2015-06-19T18:33:45.000Z</published>
-    <updated>2015-06-22T10:10:44.000Z</updated>
+    <updated>2015-06-22T11:03:03.000Z</updated>
     <content type="html"><![CDATA[<!-- toc -->
 <ul>
 <li><a href="#&#x52A8;&#x673A;">&#x52A8;&#x673A;</a></li>
@@ -89,7 +89,7 @@
 <p>ERROR Deployer not found: git</p>
 </blockquote>
 <p>&#x6267;&#x884C;&#x4E0B;&#x9762;&#x8BED;&#x53E5;&#x540E;&#xFF0C;&#x518D;&#x90E8;&#x7F72;.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>&#x90E8;&#x7F72;&#x5B8C;&#x540E;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;:<a href="http://wangzhilong.github.io/.&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x535A;&#x5BA2;&#x4E86;&#x3002;" target="_blank" rel="external">http://wangzhilong.github.io/.&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x535A;&#x5BA2;&#x4E86;&#x3002;</a></p>
+<p>&#x90E8;&#x7F72;&#x5B8C;&#x540E;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;:<a href="http://wangzhilong.github.io/" target="_blank" rel="external">http://wangzhilong.github.io/</a> .&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x535A;&#x5BA2;&#x4E86;&#x3002;</p>
 <h2 id="&#x5199;&#x65B0;&#x6587;&#x7AE0;">&#x5199;&#x65B0;&#x6587;&#x7AE0;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new make_blog</span><br></pre></td></tr></table></figure>
 <p>make_blog&#x662F;&#x6587;&#x7AE0;&#x7684;&#x6807;&#x9898;&#x3002;&#x5199;&#x5B8C;&#x65B0;&#x6587;&#x7AE0;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x90E8;&#x7F72;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x770B;&#x5230;&#x4E86;&#x3002;<br><em>&#x6CE8;</em>:&#x63A8;&#x8350;&#x4E00;&#x4E2A;&#x5728;&#x7EBF;&#x7528;markdown&#x5199;&#x6587;&#x7AE0;&#xFF1A;<a href="https://www.zybuluo.com/" target="_blank" rel="external">https://www.zybuluo.com/</a></p>
 <h2 id="&#x53C2;&#x8003;&#x6587;&#x7AE0;">&#x53C2;&#x8003;&#x6587;&#x7AE0;</h2><p>&#x3010;1&#x3011; <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a><br>&#x3010;2&#x3011; <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a></p>
