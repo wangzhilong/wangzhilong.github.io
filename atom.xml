@@ -5,7 +5,7 @@
   <subtitle><![CDATA[路漫漫其修远兮]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2015-06-23T15:04:10.000Z</updated>
+  <updated>2015-06-23T15:11:27.000Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[dup-dup2]]></title>
+    <title><![CDATA[dup/dup2函数用法]]></title>
     <link href="http://yoursite.com/2015/06/23/dup-dup2/"/>
     <id>http://yoursite.com/2015/06/23/dup-dup2/</id>
     <published>2015-06-23T15:02:47.000Z</published>
-    <updated>2015-06-23T15:04:10.000Z</updated>
+    <updated>2015-06-23T15:11:27.000Z</updated>
     <content type="html"><![CDATA[<p>&#x7CFB;&#x7EDF;&#x8C03;&#x7528;dup&#x548C;dup2&#x80FD;&#x591F;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;dup&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF08;&#x6CA1;&#x6709;&#x7528;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x6700;&#x5C0F;&#x7684;&#x7F16;&#x53F7;&#xFF09;&#x3002;dup2&#x53EF;&#x4EE5;&#x8BA9;&#x7528;&#x6237;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x7684;&#x503C;&#xFF0C;&#x5B83;&#x901A;&#x5E38;&#x7528;&#x6765;&#x91CD;&#x65B0;&#x6253;&#x5F00;&#x6216;&#x8005;&#x91CD;&#x5B9A;&#x5411;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;&#x51FD;&#x6570;&#x539F;&#x578B;&#x5982;&#x4E0B;&#xFF1A;</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;unsitd.h&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dup</span><span class="params">(<span class="keyword">int</span> oldfd)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dup2</span><span class="params">(<span class="keyword">int</span> oldfd, <span class="keyword">int</span> newfd)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>dup&#x548C;dup2&#x90FD;&#x662F;&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x9519;&#xFF0C;&#x8FD4;&#x56DE;-1.&#x5728;dup2&#x4E2D;&#xFF0C;&#x5982;&#x679C;newfd&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#xFF0C;&#x5173;&#x95ED;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x91CD;&#x5B9A;&#x5411;oldfd&#x6240;&#x6307;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x65B0;&#x8001;&#x63CF;&#x8FF0;&#x7B26;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF08;&#x4F4D;&#x7F6E;&#xFF09;&#x3001;&#x6807;&#x5FD7;&#x548C;&#x9501;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5171;&#x4EAB;close-on-exec&#x6807;&#x5FD7;&#x3002;</p>
