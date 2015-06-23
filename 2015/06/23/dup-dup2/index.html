@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="python,设计模式," />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-  <title> python单例装饰器 // wangzhilong's blog </title>
+  <title> dup-dup2 // wangzhilong's blog </title>
 </head>
 
 <body>
@@ -146,7 +146,7 @@
           
           
             
-              python单例装饰器
+              dup-dup2
             
           
         </h1>
@@ -154,28 +154,17 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-22
+          发表于 2015-06-23
         </span>
 
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/python/">python</a>
-
-              
-              
-
-            
-          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/22/singleton-decorate/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/22/singleton-decorate/"></span>
+            <a href="/2015/06/23/dup-dup2/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/23/dup-dup2/"></span>
             </a>
           </span>
           
@@ -189,7 +178,33 @@
       
 
       
-        <p>&#x5355;&#x4F8B;&#x662F;&#x8BBE;&#x8BA1;&#x7ED3;&#x6784;&#x4E2D;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x6A21;&#x5F0F;&#x3002;&#x5728;&#x5DE5;&#x7A0B;&#x4E2D;&#xFF0C;&#x786E;&#x4FDD;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3001;&#x786E;&#x4FDD;&#x65E5;&#x5FD7;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;&#x7B49;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5355;&#x4F8B;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4F7F;&#x7528;python&#x7684;&#x88C5;&#x9970;&#x5668;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;&#x53EF;&#x4EE5;&#x88C5;&#x9970;&#x7C7B;&#x548C;&#x51FD;&#x6570;&#x3002;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span><br><span class="line">singleton decorator</span><br><span class="line"></span><br><span class="line">usage:</span><br><span class="line"></span><br><span class="line">decorete function: this function just be executed once.</span><br><span class="line">@singlenton</span><br><span class="line">def fun():</span><br><span class="line">    # do something</span><br><span class="line">    return</span><br><span class="line"></span><br><span class="line">decorate class: this class just have one instance.</span><br><span class="line">@singleton</span><br><span class="line">class MyClass(object):</span><br><span class="line">    def __init__():</span><br><span class="line">        pass</span><br><span class="line">&quot;&quot;&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    instances = {}</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_singleton</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls(*args, **kw)</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line">    <span class="keyword">return</span> _singleton</span><br></pre></td></tr></table></figure></p>
+        <p>&#x7CFB;&#x7EDF;&#x8C03;&#x7528;dup&#x548C;dup2&#x80FD;&#x591F;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;dup&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF08;&#x6CA1;&#x6709;&#x7528;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x6700;&#x5C0F;&#x7684;&#x7F16;&#x53F7;&#xFF09;&#x3002;dup2&#x53EF;&#x4EE5;&#x8BA9;&#x7528;&#x6237;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x7684;&#x503C;&#xFF0C;&#x5B83;&#x901A;&#x5E38;&#x7528;&#x6765;&#x91CD;&#x65B0;&#x6253;&#x5F00;&#x6216;&#x8005;&#x91CD;&#x5B9A;&#x5411;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;&#x51FD;&#x6570;&#x539F;&#x578B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;unsitd.h&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dup</span><span class="params">(<span class="keyword">int</span> oldfd)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dup2</span><span class="params">(<span class="keyword">int</span> oldfd, <span class="keyword">int</span> newfd)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>dup&#x548C;dup2&#x90FD;&#x662F;&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x9519;&#xFF0C;&#x8FD4;&#x56DE;-1.&#x5728;dup2&#x4E2D;&#xFF0C;&#x5982;&#x679C;newfd&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#xFF0C;&#x5173;&#x95ED;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x91CD;&#x5B9A;&#x5411;oldfd&#x6240;&#x6307;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x65B0;&#x8001;&#x63CF;&#x8FF0;&#x7B26;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF08;&#x4F4D;&#x7F6E;&#xFF09;&#x3001;&#x6807;&#x5FD7;&#x548C;&#x9501;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5171;&#x4EAB;close-on-exec&#x6807;&#x5FD7;&#x3002;</p>
+<hr>
+<blockquote>
+<ol>
+<li>&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x5728;&#x8FDB;&#x7A0B;&#x8868;&#x4E2D;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x9879;&#xFF0C;&#x6BCF;&#x4E2A;&#x8BB0;&#x5F55;&#x9879;&#x4E2D;&#x6709;&#x4E00;&#x5F20;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x8868;&#xFF0C;&#x53EF;&#x5C06;&#x89C6;&#x4E3A;&#x4E00;&#x4E2A;&#x77E2;&#x91CF;&#xFF0C;&#x6BCF;&#x4E2A;&#x63CF;&#x8FF0;&#x7B26;&#x5360;&#x7528;&#x4E00;&#x9879;&#x3002;&#x4E0E;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x9879;&#x5173;&#x8054;&#x7684;&#x662F;&#xFF1A;</li>
+</ol>
+<ul>
+<li>&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x6807;&#x5FD7;</li>
+<li>&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8868;&#x9879;&#x7684;&#x6307;&#x9488;</li>
+</ul>
+<ol>
+<li>&#x5185;&#x6838;&#x4E3A;&#x6240;&#x6709;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7EF4;&#x6301;&#x4E00;&#x5F20;&#x6587;&#x4EF6;&#x8868;&#x3002;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x8868;&#x5305;&#x542B;&#xFF1A;</li>
+</ol>
+<ul>
+<li>&#x6587;&#x4EF6;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#xFF08;&#x8BFB;&#x3001;&#x5199;&#x3001;&#x589E;&#x5199;&#x3001;&#x540C;&#x6B65;&#x3001;&#x975E;&#x963B;&#x585E;&#x7B49;&#xFF09;</li>
+<li>&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x4F4D;&#x79FB;&#x91CF;</li>
+<li>&#x6307;&#x5411;&#x8BE5;&#x6587;&#x4EF6;v&#x8282;&#x70B9;&#x8868;&#x9879;&#x7684;&#x6307;&#x9488;</li>
+</ul>
+</blockquote>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x6BB5;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x7A0B;&#x5E8F;&#xFF1A;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x5C06;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#x3002;<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;sys/stat.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;fcntl.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;unistd.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>{</span><br><span class="line">    <span class="keyword">int</span> fd;</span><br><span class="line">    <span class="comment">//(1)&#x6253;&#x5F00;&#x6587;&#x4EF6;</span></span><br><span class="line">    fd = open(<span class="string">&quot;my.file&quot;</span>, O_WRONLY|O_CREAT|O_APPEND, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);</span><br><span class="line">    <span class="keyword">if</span> (fd == -<span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        perror(<span class="string">&quot;\nERROR:fail to create my.file.&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//(2)&#x6587;&#x4EF6;&#x91CD;&#x5B9A;&#x5411;</span></span><br><span class="line">    <span class="keyword">if</span> (dup2(fd, STDOUT_FILENO) == -<span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        perror(<span class="string">&quot;\nERROR: fail to redirect std output.&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//(3)&#x5220;&#x9664;oldfd</span></span><br><span class="line">    <span class="keyword">if</span> (close(fd) == -<span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        perror(<span class="string">&quot;\nERROR: fail to close my.file.&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//(4)&#x6807;&#x51C6;&#x8F93;&#x51FA;</span></span><br><span class="line">    <span class="keyword">if</span> (write(STDOUT_FILENO, <span class="string">&quot;HELLO&quot;</span>, <span class="number">5</span>) == -<span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        perror(<span class="string">&quot;\nERROR: fail to write to file.&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>open&#x51FD;&#x6570;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#xFF0C;&#x521B;&#x5EFA;&#x4EE5;&#x540E;&#x518D;&#x6253;&#x5F00;&#x3002;&#x5E76;&#x5728;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x8868;&#x5185;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6761;&#x76EE;&#x3002;<br><img src="http://img.blog.csdn.net/20150403163414234" alt="&#x8FD9;&#x91CC;&#x5199;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></li>
+<li>dup2&#x51FD;&#x6570;&#x5C06;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x5B9A;&#x5411;&#x5230;&#x521A;&#x6253;&#x5F00;&#x7684;fd&#x4E2D;&#x3002;<br><img src="http://img.blog.csdn.net/20150403163829572" alt="&#x8FD9;&#x91CC;&#x5199;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></li>
+<li>close()&#x540E;&#xFF0C;&#x5220;&#x9664;&#x6389;fd&#x3002;<br><img src="http://img.blog.csdn.net/20150403163922850" alt="&#x8FD9;&#x91CC;&#x5199;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"><br>&#x7ECF;&#x8FC7;&#x4EE5;&#x4E0A;&#x4E09;&#x6B65;&#x540E;&#xFF0C;&#x8FDB;&#x884C;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x65F6;&#xFF0C;&#x4F1A;&#x88AB;&#x8F93;&#x51FA;&#x5230;myfile&#x6587;&#x4EF6;&#x4E2D;&#x3002;</li>
+</ol>
 
       
     </div>
@@ -198,9 +213,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/"> #python </a>
-          
-            <a href="/tags/设计模式/"> #设计模式 </a>
+            <a href="/tags/linux/"> #linux </a>
           
         </div>
       
@@ -209,13 +222,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/06/23/dup-dup2/">dup-dup2</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/20/make-blog/">搭建个人博客</a>
+              <a href="/2015/06/22/singleton-decorate/">python单例装饰器</a>
             
           </div>
         </div>
@@ -233,8 +244,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/06/22/singleton-decorate/"
-               data-title="python单例装饰器" data-url="http://yoursite.com/2015/06/22/singleton-decorate/">
+          <div class="ds-thread" data-thread-key="2015/06/23/dup-dup2/"
+               data-title="dup-dup2" data-url="http://yoursite.com/2015/06/23/dup-dup2/">
           </div>
         
       </div>
