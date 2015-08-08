@@ -43,13 +43,7 @@
 
 
 
-  <title>
-  
-
-  
-    categories // wangzhilong's blog
-  
-</title>
+  <title> 归档 // wangzhilong's blog </title>
 </head>
 
 <body>
@@ -63,7 +57,7 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column ">
+  <div class="container one-column  page-archive ">
     <div class="headband"></div>
 
     <div id="header" class="header">
@@ -110,14 +104,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            <i class="menu-item-icon icon-categories"></i> <br />
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags">
             <i class="menu-item-icon icon-tags"></i> <br />
@@ -140,12 +126,59 @@
         <div id="content" class="content">
           
 
-  <div id="posts" class="posts-expand">
-    
-    
+  <div id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
       
+      
+      
+        
+      
+      嗯..! 目前共计 4 篇日志。 继续努力。
+    </span>
+
     
+
+      
+      
+      
+
+      
+        
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
+        </div>
+      
+      
+
+      
+
+  <div class="post post-type-normal">
+    <div class="post-header">
+
+      <div class="post-title">
+        
+            <a class="post-title-link" href="/2015/08/08/nohup/">
+              Linux下，把前台程序放到后台运行
+            </a>
+        
+      </div>
+
+      <div class="post-meta">
+        <span class="post-time"> 08-08 </span>
+      </div>
+
+    </div>
   </div>
+
+
+
+    
+
+  </div>
+
+  
 
 
         </div>
@@ -178,16 +211,16 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">1</span>
+            
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分类</span>
-              </a>
+              
           </div>
 
           <div class="site-state-item site-state-tags">
@@ -259,6 +292,12 @@
 
   
   
+  
+    <script type="text/javascript">
+      postMotionOptions = {stagger: 100, drag: true};
+    </script>
+  
+
 
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
@@ -278,6 +317,12 @@
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
   
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
+
 
   <script type="text/javascript">
     $(document).ready(function () {
