@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="网络," />
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-  <title> dup/dup2函数用法 // wangzhilong's blog </title>
+  <title> listen和accept中的sokcet关系 // wangzhilong's blog </title>
 </head>
 
 <body>
@@ -138,7 +138,7 @@
           
           
             
-              dup/dup2函数用法
+              listen和accept中的sokcet关系
             
           
         </h1>
@@ -146,7 +146,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-23
+          发表于 2015-08-28
         </span>
 
         
@@ -155,8 +155,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/23/dup-dup2/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/23/dup-dup2/"></span>
+            <a href="/2015/08/28/socket/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/28/socket/"></span>
             </a>
           </span>
           
@@ -170,31 +170,11 @@
       
 
       
-        <p>&#x7CFB;&#x7EDF;&#x8C03;&#x7528;dup&#x548C;dup2&#x80FD;&#x591F;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;dup&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF08;&#x6CA1;&#x6709;&#x7528;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x6700;&#x5C0F;&#x7684;&#x7F16;&#x53F7;&#xFF09;&#x3002;dup2&#x53EF;&#x4EE5;&#x8BA9;&#x7528;&#x6237;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x7684;&#x503C;&#xFF0C;&#x5B83;&#x901A;&#x5E38;&#x7528;&#x6765;&#x91CD;&#x65B0;&#x6253;&#x5F00;&#x6216;&#x8005;&#x91CD;&#x5B9A;&#x5411;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;&#x51FD;&#x6570;&#x539F;&#x578B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;unsitd.h&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dup</span><span class="params">(<span class="keyword">int</span> oldfd)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dup2</span><span class="params">(<span class="keyword">int</span> oldfd, <span class="keyword">int</span> newfd)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>dup&#x548C;dup2&#x90FD;&#x662F;&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x9519;&#xFF0C;&#x8FD4;&#x56DE;-1.&#x5728;dup2&#x4E2D;&#xFF0C;&#x5982;&#x679C;newfd&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#xFF0C;&#x5173;&#x95ED;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x91CD;&#x5B9A;&#x5411;oldfd&#x6240;&#x6307;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x65B0;&#x8001;&#x63CF;&#x8FF0;&#x7B26;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF08;&#x4F4D;&#x7F6E;&#xFF09;&#x3001;&#x6807;&#x5FD7;&#x548C;&#x9501;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5171;&#x4EAB;close-on-exec&#x6807;&#x5FD7;&#x3002;</p>
-<hr>
-<blockquote>
-<p>&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x5728;&#x8FDB;&#x7A0B;&#x8868;&#x4E2D;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x9879;&#xFF0C;&#x6BCF;&#x4E2A;&#x8BB0;&#x5F55;&#x9879;&#x4E2D;&#x6709;&#x4E00;&#x5F20;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x8868;&#xFF0C;&#x53EF;&#x5C06;&#x89C6;&#x4E3A;&#x4E00;&#x4E2A;&#x77E2;&#x91CF;&#xFF0C;&#x6BCF;&#x4E2A;&#x63CF;&#x8FF0;&#x7B26;&#x5360;&#x7528;&#x4E00;&#x9879;&#x3002;&#x4E0E;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x9879;&#x5173;&#x8054;&#x7684;&#x662F;&#xFF1A;</p>
-<ul>
-<li>&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x6807;&#x5FD7;</li>
-<li>&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8868;&#x9879;&#x7684;&#x6307;&#x9488;</li>
-</ul>
-<hr>
-<p>&#x5185;&#x6838;&#x4E3A;&#x6240;&#x6709;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7EF4;&#x6301;&#x4E00;&#x5F20;&#x6587;&#x4EF6;&#x8868;&#x3002;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x8868;&#x5305;&#x542B;&#xFF1A;</p>
-<ul>
-<li>&#x6587;&#x4EF6;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#xFF08;&#x8BFB;&#x3001;&#x5199;&#x3001;&#x589E;&#x5199;&#x3001;&#x540C;&#x6B65;&#x3001;&#x975E;&#x963B;&#x585E;&#x7B49;&#xFF09;</li>
-<li>&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x4F4D;&#x79FB;&#x91CF;</li>
-<li>&#x6307;&#x5411;&#x8BE5;&#x6587;&#x4EF6;v&#x8282;&#x70B9;&#x8868;&#x9879;&#x7684;&#x6307;&#x9488;</li>
-</ul>
-</blockquote>
-<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x6BB5;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x7A0B;&#x5E8F;&#xFF1A;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x5C06;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#x3002;<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;sys/stat.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;fcntl.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;unistd.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>{</span><br><span class="line">    <span class="keyword">int</span> fd;</span><br><span class="line">    <span class="comment">//(1)&#x6253;&#x5F00;&#x6587;&#x4EF6;</span></span><br><span class="line">    fd = open(<span class="string">&quot;my.file&quot;</span>, O_WRONLY|O_CREAT|O_APPEND, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);</span><br><span class="line">    <span class="keyword">if</span> (fd == -<span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        perror(<span class="string">&quot;\nERROR:fail to create my.file.&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//(2)&#x6587;&#x4EF6;&#x91CD;&#x5B9A;&#x5411;</span></span><br><span class="line">    <span class="keyword">if</span> (dup2(fd, STDOUT_FILENO) == -<span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        perror(<span class="string">&quot;\nERROR: fail to redirect std output.&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//(3)&#x5220;&#x9664;oldfd</span></span><br><span class="line">    <span class="keyword">if</span> (close(fd) == -<span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        perror(<span class="string">&quot;\nERROR: fail to close my.file.&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//(4)&#x6807;&#x51C6;&#x8F93;&#x51FA;</span></span><br><span class="line">    <span class="keyword">if</span> (write(STDOUT_FILENO, <span class="string">&quot;HELLO&quot;</span>, <span class="number">5</span>) == -<span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        perror(<span class="string">&quot;\nERROR: fail to write to file.&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>open&#x51FD;&#x6570;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#xFF0C;&#x521B;&#x5EFA;&#x4EE5;&#x540E;&#x518D;&#x6253;&#x5F00;&#x3002;&#x5E76;&#x5728;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x8868;&#x5185;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6761;&#x76EE;&#x3002;<br><img src="http://img.blog.csdn.net/20150403163414234" alt="&#x8FD9;&#x91CC;&#x5199;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></li>
-<li>dup2&#x51FD;&#x6570;&#x5C06;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x5B9A;&#x5411;&#x5230;&#x521A;&#x6253;&#x5F00;&#x7684;fd&#x4E2D;&#x3002;<br><img src="http://img.blog.csdn.net/20150403163829572" alt="&#x8FD9;&#x91CC;&#x5199;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></li>
-<li>close()&#x540E;&#xFF0C;&#x5220;&#x9664;&#x6389;fd&#x3002;<br><img src="http://img.blog.csdn.net/20150403163922850" alt="&#x8FD9;&#x91CC;&#x5199;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"><br>&#x7ECF;&#x8FC7;&#x4EE5;&#x4E0A;&#x4E09;&#x6B65;&#x540E;&#xFF0C;&#x8FDB;&#x884C;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x65F6;&#xFF0C;&#x4F1A;&#x88AB;&#x8F93;&#x51FA;&#x5230;myfile&#x6587;&#x4EF6;&#x4E2D;&#x3002;</li>
-</ol>
-
+        <p>&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x7A0B;&#x5E8F;&#x901A;&#x5E38;&#x662F;&#xFF1A;socket()-&gt;bind()-&gt;listen(),&#x5F53;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;connect()&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;accept()&#x5904;&#x7406;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x6211;&#x5728;&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4EE5;&#x53CA;&#x7406;&#x89E3;&#x3002;</p>
+<h5 id="&#x95EE;&#x9898;1&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x7684;socket&#x662F;&#x600E;&#x4E48;&#x901A;&#x4FE1;&#x7684;">&#x95EE;&#x9898;1&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x7684;socket&#x662F;&#x600E;&#x4E48;&#x901A;&#x4FE1;&#x7684;&#xFF1F;</h5><p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;socket&#x6709;&#x4E00;&#x4E2A;&#x56DB;&#x5143;&#x7EC4;:(&#x76EE;&#x7684;ip, &#x76EE;&#x7684;port&#x3001;&#x6E90;ip&#xFF0C;&#x6E90;port)&#x3002;&#x8FD9;&#x4E2A;&#x56DB;&#x5143;&#x7EC4;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x901A;&#x4FE1;&#x3002;<br>&#x6BD4;&#x5982;&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x4E2A;80&#x7684;web&#x670D;&#x52A1;&#xFF0C;ip&#x662F;1.1.1.1&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;&#x65F6;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;socket&#x7ED1;&#x5B9A;&#x5230;80&#x7AEF;&#x53E3;&#x76D1;&#x542C;&#x3002;&#x8FD9;&#x65F6;&#x4E00;&#x4E2A;ip&#x4E3A; 2.2.2.2&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x53BB;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x65F6;&#xFF0C;&#x5148;&#x8981;&#x751F;&#x6210;&#x4E00;&#x4E2A;socket&#x3002;&#x7CFB;&#x7EDF;&#x4F1A;&#x4E3A;&#x8FD9;&#x4E2A;socket&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#xFF0C;&#x6BD4;&#x5982;65535.&#x90A3;&#x4E48;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4E2A;(1.1.1.1, 80, 2.2.2.2, 65535)&#x901A;&#x8FC7;connect()&#x8BBF;&#x95EE;&#x670D;&#x52A1;&#x7AEF;&#x3002;</p>
+<h5 id="&#x95EE;&#x9898;2accept&#x4E2D;&#x7684;socket&#x548C;listen&#x76D1;&#x542C;&#x7684;socket&#x7684;&#x7AEF;&#x53E3;&#x76F8;&#x540C;&#x5417;">&#x95EE;&#x9898;2&#xFF1A;accept&#x4E2D;&#x7684;socket&#x548C;listen&#x76D1;&#x542C;&#x7684;socket&#x7684;&#x7AEF;&#x53E3;&#x76F8;&#x540C;&#x5417;&#xFF1F;</h5><p>&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8FC7;connect()&#x8BBF;&#x95EE;&#x670D;&#x52A1;&#x7AEF;80&#xFF0C;&#x901A;&#x8FC7;3&#x6B21;&#x63E1;&#x624B;&#x540E;&#xFF0C;&#x8FDB;&#x5165;accept&#x961F;&#x5217;&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x8C03;&#x7528;accept()&#x65F6;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;socket&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;&#xFF0C;&#x4E4B;&#x524D;&#x7684;socket&#x4ECD;&#x7136;&#x7EE7;&#x7EED;&#x76D1;&#x542C;80&#x7AEF;&#x53E3;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65B0;&#x751F;&#x6210;&#x7684;&#x7AEF;&#x53E3;&#x8FD8;&#x662F;80&#x5417;&#xFF1F;&#x7B54;&#x6848;&#x662F;&#x80AF;&#x5B9A;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x5BA2;&#x6237;&#x7AEF;&#x90A3;&#x8FB9;&#x7684;socket&#x5C31;&#x65E0;&#x6CD5;&#x548C;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x901A;&#x4FE1;&#x3002;&#x770B;accept&#x6E90;&#x7801;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x4F1A;&#x62F7;&#x8D1D;&#x76D1;&#x542C;socket&#x7684;&#x4FE1;&#x606F;&#x3002;&#x56E0;&#x6B64;&#x4E24;&#x8005;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x76F8;&#x540C;&#x3002;</p>
+<h5 id="&#x95EE;&#x9898;3&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x600E;&#x4E48;&#x533A;&#x5206;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x7ED9;listen&#x7684;socket&#x8FD8;&#x662F;accept&#x7684;socket&#x7684;">&#x95EE;&#x9898;3&#xFF1A;&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x600E;&#x4E48;&#x533A;&#x5206;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x7ED9;listen&#x7684;socket&#x8FD8;&#x662F;accept&#x7684;socket&#x7684;&#xFF1F;</h5><p>&#x5982;&#x679C;&#x76D1;&#x542C;&#x7684;socket&#x548C;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x90FD;&#x662F;&#x4F7F;&#x7528;80&#x7AEF;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x7ED9;80&#x7AEF;&#x53E3;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x600E;&#x4E48;&#x533A;&#x5206;&#x662F;&#x7ED9;&#x54EA;&#x4E2A;socket&#xFF1F;&#x662F;&#x901A;&#x8FC7;&#x5BA2;&#x6237;&#x7AEF;port&#x505A;&#x8DEF;&#x7531;&#x7684;&#x3002;listen&#x4F7F;&#x7528;&#x7684;socket&#x662F;&#x6CA1;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x606F;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7AEF;&#x53E3;&#x4E3A;*&#xFF1B;&#x800C;accept&#x65F6;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x662F;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x7AEF;&#x53E3;&#x53F7;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x76D1;&#x542C;&#x7684;socket&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x662F;accet&#x540E;&#x751F;&#x6210;&#x7684;socket&#x3002;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x56DB;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5BA2;&#x6237;&#x7AEF;port&#x5C31;&#x53EF;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x606F;&#x8DEF;&#x7531;&#x5230;&#x4E86;&#x6B63;&#x786E;&#x7684;socket&#x4E0A;&#x3002;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wangzhilong@<span class="keyword">in</span>17-<span class="number">164</span>^:/mnt/mfs/$ netstat --tcp -lan | grep <span class="number">8787</span></span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">8787</span>            <span class="number">0.0</span>.<span class="number">0.0</span>:*               LISTEN</span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">10.4</span>.<span class="number">17.164</span>:<span class="number">8787</span>        <span class="number">10.2</span>.<span class="number">22.31</span>:<span class="number">64285</span>        TIME_WAIT</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -202,7 +182,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/"> #linux </a>
+            <a href="/tags/网络/"> #网络 </a>
           
         </div>
       
@@ -211,13 +191,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/08/nohup/">Linux下，把前台程序放到后台运行</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/22/singleton-decorate/">python单例装饰器</a>
+              <a href="/2015/08/25/kafka/">kafka笔记</a>
             
           </div>
         </div>
@@ -235,8 +213,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/06/23/dup-dup2/"
-               data-title="dup/dup2函数用法" data-url="http://yoursite.com/2015/06/23/dup-dup2/">
+          <div class="ds-thread" data-thread-key="2015/08/28/socket/"
+               data-title="listen和accept中的sokcet关系" data-url="http://yoursite.com/2015/08/28/socket/">
           </div>
         
       </div>
@@ -327,7 +305,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题1客户端和服务端的socket是怎么通信的"><span class="nav-number">1.</span> <span class="nav-text">问题1：客户端和服务端的socket是怎么通信的？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题2accept中的socket和listen监听的socket的端口相同吗"><span class="nav-number">2.</span> <span class="nav-text">问题2：accept中的socket和listen监听的socket的端口相同吗？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题3服务端是怎么区分客户端的信息是给listen的socket还是accept的socket的"><span class="nav-number">3.</span> <span class="nav-text">问题3：服务端是怎么区分客户端的信息是给listen的socket还是accept的socket的？</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
