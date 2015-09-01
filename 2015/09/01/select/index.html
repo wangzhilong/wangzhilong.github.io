@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="linux,网路," />
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-  <title> wangzhilong's blog </title>
+  <title> select源码学习 // wangzhilong's blog </title>
 </head>
 
 <body>
@@ -57,9 +57,7 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <div id="header" class="header">
@@ -127,9 +125,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
+
   <div id="posts" class="posts-expand">
     
-      
 
   <div class="post post-type-normal ">
     <div class="post-header">
@@ -140,9 +138,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/01/select/">
-                select源码学习
-              </a>
+              select源码学习
             
           
         </h1>
@@ -174,8 +170,7 @@
       
 
       
-        
-          <!-- toc -->
+        <!-- toc -->
 <ul>
 <li><a href="#&#x51FD;&#x6570;&#x539F;&#x578B;">&#x51FD;&#x6570;&#x539F;&#x578B;</a></li>
 <li><a href="#&#x6E90;&#x7801;&#x5206;&#x6790;">&#x6E90;&#x7801;&#x5206;&#x6790;</a><ul>
@@ -215,319 +210,50 @@
 <p>poll_table_entry: &#x7528;&#x4E8E;&#x963B;&#x585E;&#x8FDB;&#x7A0B;&#x5E76;&#x5C06;&#x8FDB;&#x7A0B;&#x6DFB;&#x52A0;&#x5230;&#x6587;&#x4EF6;&#x7684;poll&#x7B49;&#x5F85;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;poll_table_entry&#x3002;<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">stuct poll_wqueues {</span><br><span class="line">    <span class="keyword">poll_t</span>able pt;</span><br><span class="line">    <span class="keyword">struct</span> <span class="keyword">poll_t</span>able_page *table;</span><br><span class="line">    <span class="keyword">struct</span> task_struct *<span class="keyword">polling_t</span>ask;</span><br><span class="line">    <span class="keyword">int</span> triggered;</span><br><span class="line">    <span class="keyword">int</span> error;</span><br><span class="line">    <span class="keyword">int</span> inline_index;</span><br><span class="line">    <span class="keyword">struct</span> <span class="keyword">poll_t</span>able_entry inline_entries[N_INLINE_POLL_ENTRIES];</span><br><span class="line">};</span><br></pre></td></tr></table></figure></p>
 <p>poll_wqueues: &#x7528;&#x4E8E;&#x5728;select/poll&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x963B;&#x585E;&#x8FDB;&#x7A0B;&#xFF0C;&#x5C06;&#x8FDB;&#x7A0B;&#x6DFB;&#x52A0;&#x5230;&#x63CF;&#x8FF0;&#x8868;&#x6807;&#x8BC6;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;poll&#x7B49;&#x5F85;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x4EE5;&#x4FBF;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53EF;&#x8FDB;&#x884C;&#x975E;&#x963B;&#x585E;I/O&#x64CD;&#x4F5C;&#x65F6;&#x5524;&#x9192;&#x8FDB;&#x7A0B;&#x3002;</p>
 
-        
       
     </div>
 
     <div class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/linux-网路/"> #linux,网路 </a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/28/socket/">listen和accept中的sokcet关系</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </div>
   </div>
 
 
+
     
-      
 
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/28/socket/">
-                listen和accept中的sokcet关系
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-08-28
-        </span>
-
+    
+      <div class="comments" id="comments">
         
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/08/28/socket/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/28/socket/"></span>
-            </a>
-          </span>
-          
+          <div class="ds-thread" data-thread-key="2015/09/01/select/"
+               data-title="select源码学习" data-url="http://yoursite.com/2015/09/01/select/">
+          </div>
         
       </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x7A0B;&#x5E8F;&#x901A;&#x5E38;&#x662F;&#xFF1A;socket()-&gt;bind()-&gt;listen(),&#x5F53;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;connect()&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;accept()&#x5904;&#x7406;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x6211;&#x5728;&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4EE5;&#x53CA;&#x7406;&#x89E3;&#x3002;</p>
-<h5 id="&#x95EE;&#x9898;1&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x7684;socket&#x662F;&#x600E;&#x4E48;&#x901A;&#x4FE1;&#x7684;">&#x95EE;&#x9898;1&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x7684;socket&#x662F;&#x600E;&#x4E48;&#x901A;&#x4FE1;&#x7684;&#xFF1F;</h5><p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;socket&#x6709;&#x4E00;&#x4E2A;&#x56DB;&#x5143;&#x7EC4;:(&#x76EE;&#x7684;ip, &#x76EE;&#x7684;port&#x3001;&#x6E90;ip&#xFF0C;&#x6E90;port)&#x3002;&#x8FD9;&#x4E2A;&#x56DB;&#x5143;&#x7EC4;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x901A;&#x4FE1;&#x3002;<br>&#x6BD4;&#x5982;&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x4E2A;80&#x7684;web&#x670D;&#x52A1;&#xFF0C;ip&#x662F;1.1.1.1&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;&#x65F6;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;socket&#x7ED1;&#x5B9A;&#x5230;80&#x7AEF;&#x53E3;&#x76D1;&#x542C;&#x3002;&#x8FD9;&#x65F6;&#x4E00;&#x4E2A;ip&#x4E3A; 2.2.2.2&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x53BB;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x65F6;&#xFF0C;&#x5148;&#x8981;&#x751F;&#x6210;&#x4E00;&#x4E2A;socket&#x3002;&#x7CFB;&#x7EDF;&#x4F1A;&#x4E3A;&#x8FD9;&#x4E2A;socket&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#xFF0C;&#x6BD4;&#x5982;65535.&#x90A3;&#x4E48;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4E2A;(1.1.1.1, 80, 2.2.2.2, 65535)&#x901A;&#x8FC7;connect()&#x8BBF;&#x95EE;&#x670D;&#x52A1;&#x7AEF;&#x3002;</p>
-<h5 id="&#x95EE;&#x9898;2accept&#x4E2D;&#x7684;socket&#x548C;listen&#x76D1;&#x542C;&#x7684;socket&#x7684;&#x7AEF;&#x53E3;&#x76F8;&#x540C;&#x5417;">&#x95EE;&#x9898;2&#xFF1A;accept&#x4E2D;&#x7684;socket&#x548C;listen&#x76D1;&#x542C;&#x7684;socket&#x7684;&#x7AEF;&#x53E3;&#x76F8;&#x540C;&#x5417;&#xFF1F;</h5><p>&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8FC7;connect()&#x8BBF;&#x95EE;&#x670D;&#x52A1;&#x7AEF;80&#xFF0C;&#x901A;&#x8FC7;3&#x6B21;&#x63E1;&#x624B;&#x540E;&#xFF0C;&#x8FDB;&#x5165;accept&#x961F;&#x5217;&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x8C03;&#x7528;accept()&#x65F6;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;socket&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;&#xFF0C;&#x4E4B;&#x524D;&#x7684;socket&#x4ECD;&#x7136;&#x7EE7;&#x7EED;&#x76D1;&#x542C;80&#x7AEF;&#x53E3;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65B0;&#x751F;&#x6210;&#x7684;&#x7AEF;&#x53E3;&#x8FD8;&#x662F;80&#x5417;&#xFF1F;&#x7B54;&#x6848;&#x662F;&#x80AF;&#x5B9A;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x5BA2;&#x6237;&#x7AEF;&#x90A3;&#x8FB9;&#x7684;socket&#x5C31;&#x65E0;&#x6CD5;&#x548C;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x901A;&#x4FE1;&#x3002;&#x770B;accept&#x6E90;&#x7801;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x4F1A;&#x62F7;&#x8D1D;&#x76D1;&#x542C;socket&#x7684;&#x4FE1;&#x606F;&#x3002;&#x56E0;&#x6B64;&#x4E24;&#x8005;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x76F8;&#x540C;&#x3002;</p>
-<h5 id="&#x95EE;&#x9898;3&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x600E;&#x4E48;&#x533A;&#x5206;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x7ED9;listen&#x7684;socket&#x8FD8;&#x662F;accept&#x7684;socket&#x7684;">&#x95EE;&#x9898;3&#xFF1A;&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x600E;&#x4E48;&#x533A;&#x5206;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x7ED9;listen&#x7684;socket&#x8FD8;&#x662F;accept&#x7684;socket&#x7684;&#xFF1F;</h5><p>&#x5982;&#x679C;&#x76D1;&#x542C;&#x7684;socket&#x548C;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x90FD;&#x662F;&#x4F7F;&#x7528;80&#x7AEF;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x7ED9;80&#x7AEF;&#x53E3;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x600E;&#x4E48;&#x533A;&#x5206;&#x662F;&#x7ED9;&#x54EA;&#x4E2A;socket&#xFF1F;&#x662F;&#x901A;&#x8FC7;&#x5BA2;&#x6237;&#x7AEF;port&#x505A;&#x8DEF;&#x7531;&#x7684;&#x3002;listen&#x4F7F;&#x7528;&#x7684;socket&#x662F;&#x6CA1;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x606F;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7AEF;&#x53E3;&#x4E3A;*&#xFF1B;&#x800C;accept&#x65F6;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x662F;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x7AEF;&#x53E3;&#x53F7;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x76D1;&#x542C;&#x7684;socket&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x662F;accet&#x540E;&#x751F;&#x6210;&#x7684;socket&#x3002;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x56DB;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5BA2;&#x6237;&#x7AEF;port&#x5C31;&#x53EF;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x606F;&#x8DEF;&#x7531;&#x5230;&#x4E86;&#x6B63;&#x786E;&#x7684;socket&#x4E0A;&#x3002;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wangzhilong@<span class="keyword">in</span>17-<span class="number">164</span>^:/mnt/mfs/$ netstat --tcp -lan | grep <span class="number">8787</span></span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">8787</span>            <span class="number">0.0</span>.<span class="number">0.0</span>:*               LISTEN</span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">10.4</span>.<span class="number">17.164</span>:<span class="number">8787</span>        <span class="number">10.2</span>.<span class="number">22.31</span>:<span class="number">64285</span>        TIME_WAIT</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/25/kafka/">
-                kafka笔记
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-08-25
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/08/25/kafka/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/25/kafka/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>&#x6700;&#x8FD1;&#x6709;&#x4F7F;&#x7528;kafka&#xFF0C;&#x987A;&#x4FBF;&#x5B66;&#x4E60;&#x4E0B;kafka&#xFF0C;&#x8FD9;&#x4E2A;&#x535A;&#x5BA2;&#x5199;&#x7684;&#x5F88;&#x8BE6;&#x7EC6;&#x3002;<a href="http://www.jasongj.com/2015/01/02/Kafka%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/" target="_blank" rel="external">http://www.jasongj.com/2015/01/02/Kafka%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/</a><br>&#x4E0B;&#x9762;&#x8BB0;&#x5F55;&#x51E0;&#x6761;&#x521A;&#x5F00;&#x59CB;&#x6CA1;&#x6709;&#x7406;&#x89E3;&#x7684;&#x70B9;&#xFF0C;&#x65B9;&#x4FBF;&#x4EE5;&#x540E;&#x56DE;&#x5FC6;&#x3002;</p>
-<h4 id="1-topic&#x548C;particion&#x5173;&#x7CFB;">1 topic&#x548C;particion&#x5173;&#x7CFB;</h4><p>topic&#x5728;&#x903B;&#x8F91;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x6BCF;&#x6761;&#x6D88;&#x8D39;&#x8005;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x5B83;&#x7684;topic&#x3002;&#x4E3A;&#x4E86;&#x4F7F;&#x5F97;Kafka&#x7684;&#x541E;&#x5410;&#x7387;&#x53EF;&#x4EE5;&#x6C34;&#x5E73;&#x6269;&#x5C55;&#xFF0C;&#x7269;&#x7406;&#x4E0A;&#x628A;topic&#x5206;&#x6210;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;partition&#xFF0C;&#x6BCF;&#x4E2A;partition&#x5728;&#x7269;&#x7406;&#x4E0A;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x5B58;&#x50A8;&#x8FD9;&#x4E2A;partition&#x7684;&#x6240;&#x6709;&#x6D88;&#x606F;&#x548C;&#x7D22;&#x5F15;&#x6587;&#x4EF6;&#x3002;<br>partition&#x4E2D;&#x7684;&#x6BCF;&#x6761;&#x6D88;&#x606F;&#x90FD;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x7684;id&#xFF08;offset&#xFF09;&#x3002;kafka&#x53EA;&#x4FDD;&#x8BC1;&#x6309;&#x4E00;&#x4E2A;partition&#x4E2D;&#x7684;&#x987A;&#x5E8F;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x7ED9;consumer&#xFF0C;&#x4E0D;&#x4FDD;&#x8BC1;&#x4E00;&#x4E2A;topic&#x7684;&#x6574;&#x4F53;&#xFF08;&#x591A;&#x4E2A;partition&#x95F4;&#xFF09;&#x7684;&#x987A;&#x5E8F;<br>topic&#x88AB;&#x53D1;&#x5230;&#x54EA;&#x4E2A;particion&#x662F;&#x901A;&#x8FC7;&#x6D88;&#x606F;&#x4E2D;&#x7684;key&#x8FDB;&#x884C;hash&#x51B3;&#x5B9A;&#x7684;&#x3002;</p>
-<h4 id="2-particion&#x548C;consumer&#x5173;&#x7CFB;">2 particion&#x548C;consumer&#x5173;&#x7CFB;</h4><p>&#x4E00;&#x4E2A;particion&#x6700;&#x591A;&#x53EA;&#x80FD;&#x7531;&#x4E00;&#x4E2A;consumer&#x53BB;&#x6D88;&#x8D39;&#xFF0C;&#x4F46;&#x4E00;&#x4E2A;consumer&#x53EF;&#x4EE5;&#x6D88;&#x8D39;&#x591A;&#x4E2A;particion&#x3002;&#x8FD9;&#x4E5F;&#x4FDD;&#x8BC1;&#x4E86;&#x4E00;&#x4E2A;particion&#x4E2D;&#x6D88;&#x606F;&#x662F;&#x987A;&#x5E8F;&#x6D88;&#x8D39;&#x7684;&#xFF0C;&#x4F46;&#x5982;&#x679C;consumer&#x6570;&#x91CF;&#x5927;&#x4E8E;particion&#x6570;&#x91CF;&#xFF0C;&#x591A;&#x51FA;&#x6765;&#x7684;consumer&#x662F;&#x6D6A;&#x8D39;&#x7684;&#x3002;</p>
-<h4 id="3-topic&#x548C;consumer-groupcg&#x5173;&#x7CFB;">3 topic&#x548C;consumer group(CG)&#x5173;&#x7CFB;</h4><p>&#x8FD9;&#x662F;kafka&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;topic&#x6D88;&#x606F;&#x7684;&#x5E7F;&#x64AD;&#xFF08;&#x53D1;&#x7ED9;&#x6240;&#x6709;&#x7684;consumer&#xFF09;&#x548C;&#x5355;&#x64AD;&#xFF08;&#x53D1;&#x7ED9;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;consumer&#xFF09;&#x7684;&#x624B;&#x6BB5;&#x3002;&#x4E00;&#x4E2A;topic&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;CG&#x3002;topic&#x7684;&#x6D88;&#x606F;&#x4F1A;&#x590D;&#x5236;&#xFF08;&#x4E0D;&#x662F;&#x771F;&#x7684;&#x590D;&#x5236;&#xFF0C;&#x662F;&#x6982;&#x5FF5;&#x4E0A;&#x7684;&#xFF09;&#x5230;&#x6240;&#x6709;&#x7684;CG&#xFF0C;&#x4F46;&#x6BCF;&#x4E2A;CG&#x53EA;&#x4F1A;&#x628A;&#x6D88;&#x606F;&#x53D1;&#x7ED9;&#x8BE5;CG&#x4E2D;&#x7684;&#x4E00;&#x4E2A;consumer&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x5E7F;&#x64AD;&#xFF0C;&#x53EA;&#x8981;&#x6BCF;&#x4E2A;consumer&#x6709;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;CG&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x8981;&#x5B9E;&#x73B0;&#x5355;&#x64AD;&#x53EA;&#x8981;&#x6240;&#x6709;&#x7684;consumer&#x5728;&#x540C;&#x4E00;&#x4E2A;CG&#x3002;&#x7528;CG&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;consumer&#x8FDB;&#x884C;&#x81EA;&#x7531;&#x7684;&#x5206;&#x7EC4;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x591A;&#x6B21;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5230;&#x4E0D;&#x540C;&#x7684;topic&#x3002;<br>&#x65E2;&#xFF1A;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x53EA;&#x80FD;&#x4E00;&#x4E2A;CG&#x6D88;&#x8D39;&#x4E00;&#x6B21;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x88AB;&#x591A;&#x4E2A;CG&#x6D88;&#x8D39;&#x3002;</p>
-<h4 id="4-&#x6D88;&#x8D39;&#x72B6;&#x6001;&#x600E;&#x4E48;&#x8BB0;&#x5F55;">4 &#x6D88;&#x8D39;&#x72B6;&#x6001;&#x600E;&#x4E48;&#x8BB0;&#x5F55;</h4><p>Kafka&#x4F1A;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;consumergroup&#x4FDD;&#x7559;&#x4E00;&#x4E9B;metadata&#x4FE1;&#x606F;:&#x5F53;&#x524D;&#x6D88;&#x8D39;&#x7684;&#x6D88;&#x606F;&#x7684;position&#xFF0C;&#x4E5F;&#x5373;offset&#x3002;&#x8FD9;&#x4E2A;offset&#x7531;consumer&#x63A7;&#x5236;&#x3002;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;consumer&#x4F1A;&#x5728;&#x6D88;&#x8D39;&#x5B8C;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x540E;&#x7EBF;&#x6027;&#x589E;&#x52A0;&#x8FD9;&#x4E2A;offset&#x3002;&#x5F53;&#x7136;&#xFF0C;consumer&#x4E5F;&#x53EF;&#x5C06;offset&#x8BBE;&#x6210;&#x4E00;&#x4E2A;&#x8F83;&#x5C0F;&#x7684;&#x503C;&#xFF0C;&#x91CD;&#x65B0;&#x6D88;&#x8D39;&#x4E00;&#x4E9B;&#x6D88;&#x606F;&#x3002;&#x56E0;&#x4E3A;offet&#x7531;consumer&#x63A7;&#x5236;&#xFF0C;&#x6240;&#x4EE5;Kafka broker&#x662F;&#x65E0;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x5B83;&#x4E0D;&#x9700;&#x8981;&#x6807;&#x8BB0;&#x54EA;&#x4E9B;&#x6D88;&#x606F;&#x88AB;&#x54EA;&#x4E9B;consumer&#x8FC7;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x901A;&#x8FC7;broker&#x53BB;&#x4FDD;&#x8BC1;&#x540C;&#x4E00;&#x4E2A;consumergroup&#x53EA;&#x6709;&#x4E00;&#x4E2A;consumer&#x80FD;&#x6D88;&#x8D39;&#x67D0;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x9501;&#x673A;&#x5236;&#xFF0C;&#x8FD9;&#x4E5F;&#x4E3A;Kafka&#x7684;&#x9AD8;&#x541E;&#x5410;&#x7387;&#x63D0;&#x4F9B;&#x4E86;&#x6709;&#x529B;&#x4FDD;&#x969C;&#x3002;</p>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/25/ajax-cross/">
-                ajax跨域的一些理解和解决方案
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-08-25
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/08/25/ajax-cross/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/25/ajax-cross/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="1-&#x4EC0;&#x4E48;&#x662F;ajax&#x8DE8;&#x57DF;">1 &#x4EC0;&#x4E48;&#x662F;ajax&#x8DE8;&#x57DF;</h3><p>ajax &#x7684;&#x51FA;&#x73B0;&#x4F7F;&#x5F97;&#x7F51;&#x9875;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x540E;&#x53F0;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x5C11;&#x91CF;&#x6570;&#x636E;&#x4EA4;&#x6362;&#xFF0C;&#x5B9E;&#x73B0;&#x7F51;&#x9875;&#x7684;&#x5C40;&#x90E8;&#x5237;&#x65B0;&#x3002;&#x4F46;&#x662F;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x7684;&#x8003;&#x8651;&#xFF0C;ajax&#x4E0D;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x901A;&#x4FE1;&#x3002;&#x5982;&#x679C;&#x5C1D;&#x8BD5;&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x57DF;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x80FD;&#x63A7;&#x5236;&#x6570;&#x636E;&#x9A7B;&#x7559;&#x7684;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x5E76;&#x4E14;&#x6BCF;&#x4E2A;&#x8BF7;&#x6C42;&#x90FD;&#x524D;&#x5F80;&#x540C;&#x4E00;&#x57DF;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x8FD9;&#x4E9B;&#x5B89;&#x5168;&#x9519;&#x8BEF;&#x3002;</p>
-<h3 id="2-&#x4E3A;&#x4EC0;&#x4E48;ajax&#x4E0D;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x901A;&#x4FE1;">2 &#x4E3A;&#x4EC0;&#x4E48;ajax&#x4E0D;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x901A;&#x4FE1;</h3><p>&#x4E0A;&#x6587;&#x8BF4;ajax&#x4E0D;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x901A;&#x4FE1;&#x662F;&#x56E0;&#x4E3A;&#x5B89;&#x5168;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x4F60;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;&#x94F6;&#x884C;&#x9875;&#x9762;&#xFF0C;www.bank.com&#xFF0C;&#x8FD9;&#x65F6;bank.com&#x7684;cookie&#x4E2D;&#x4F1A;&#x4FDD;&#x5B58;&#x4F60;&#x7684;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x3002;&#x7136;&#x540E;&#x4F60;&#x53C8;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x6076;&#x610F;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x8FD9;&#x4E2A;&#x7F51;&#x7AD9;&#x4E2D;&#x6709;&#x4E00;&#x6BB5;js&#x4EE3;&#x7801;&#x4F1A;&#x53BB;&#x8BF7;&#x6C42;www.bank.com&#x3002;&#x5982;&#x679C;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#xFF0C;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4F1A;&#x5E26;&#x7740;bank.com&#x57DF;&#x7684;cookie&#x53BB;&#x8BBF;&#x95EE;www.bank.com,&#x7136;&#x540E;www.bank.com&#x901A;&#x8FC7;cookie&#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x7684;&#x94F6;&#x884C;&#x8D26;&#x53F7;&#x5C31;&#x5371;&#x9669;&#x4E86;&#x3002;&#x56E0;&#x6B64;ajax&#x4E0D;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x901A;&#x4FE1;</p>
-<h3 id="3-&#x4E00;&#x4E9B;&#x89E3;&#x51B3;&#x65B9;&#x6848;">3 &#x4E00;&#x4E9B;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h3><ul>
-<li>&#x670D;&#x52A1;&#x7AEF;&#x8BBE;&#x7F6E;Access-Control-Allow-Origin<br>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EA;&#x8981;&#x670D;&#x52A1;&#x7AEF;&#x628A;response&#x7684;header&#x5934;&#x4E2D;&#x8BBE;&#x7F6E;Access-Control-Allow-Origin&#x4E3A;&#x5236;&#x5B9A;&#x53EF;&#x8BF7;&#x6C42;&#x5F53;&#x524D;&#x57DF;&#x540D;&#x4E0B;&#x6570;&#x636E;&#x7684;&#x57DF;&#x540D;&#x5373;&#x53EF;&#x3002;</li>
-<li>&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x8F6C;<br>&#x8BA9; Web &#x9875;&#x9762;&#x5411;&#x5B83;&#x6E90;&#x81EA;&#x7684; Web &#x670D;&#x52A1;&#x5668;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x8BA9; Web &#x670D;&#x52A1;&#x5668;&#x50CF;&#x4EE3;&#x7406;&#x4E00;&#x6837;&#x5C06;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x7ED9;&#x771F;&#x6B63;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x670D;&#x52A1;&#x5668;&#x3002;</li>
-<li><p>&#x91C7;&#x7528;jsonp<br>&#x5728;&#x540C;&#x6E90;&#x7B56;&#x7565;&#x4E0B;&#xFF0C;&#x5728;&#x67D0;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x4E0B;&#x7684;&#x9875;&#x9762;&#x662F;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x5230;&#x8BE5;&#x670D;&#x52A1;&#x5668;&#x4EE5;&#x5916;&#x7684;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x4F46;img&#x3001;iframe&#x3001;script&#x7B49;&#x6807;&#x7B7E;&#x662F;&#x4E2A;&#x4F8B;&#x5916;&#xFF0C;&#x8FD9;&#x4E9B;&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;src&#x5C5E;&#x6027;&#x8BF7;&#x6C42;&#x5230;&#x5176;&#x4ED6;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x3002;&#x5229;&#x7528;script&#x6807;&#x7B7E;&#x7684;&#x5F00;&#x653E;&#x7B56;&#x7565;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x914D;&#x5408;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x6B63;&#x5E38;&#x5730;&#x8BF7;&#x6C42;&#x4E00;&#x4E2A;JSON&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E32;JSON&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;JSONP&#x6A21;&#x5F0F;&#x6765;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x6BB5;&#x53EF;&#x6267;&#x884C;&#x7684;JavaScript&#x4EE3;&#x7801;&#x3002;<br>&#x4F8B;&#x5982;&#xFF0C;&#x8BF7;&#x6C42;<code>http://www.a.com/user?id=123</code>&#xFF0C;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF1A;{&#x201C;id&#x201D;: 123, &#x201C;name&#x201D; : &#x201C;&#x5F20;&#x4E09;&#x201D;, &#x201C;age&#x201D;: 17}&#x3002;<br>&#x5219;&#x524D;&#x7AEF;&#x4EE3;&#x7801;&#xFF1A;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;http://www.a.com/user?id=123?callback=foo&quot;</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>  &#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;&#xFF1A;</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$json</span> = json_encode(<span class="keyword">array</span>(<span class="string">&quot;id&quot;</span> =&gt; <span class="number">123</span>, <span class="string">&quot;name&quot;</span> =&gt; <span class="string">&quot;&#x5F20;&#x4E09;&quot;</span>, <span class="string">&quot;age&quot;</span> =&gt; <span class="number">17</span>));</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&apos;callback&apos;</span>])){</span><br><span class="line">    <span class="variable">$json</span> = <span class="string">&apos;try{&apos;</span> . <span class="variable">$_GET</span>[<span class="string">&apos;callback&apos;</span>] . <span class="string">&apos;(&apos;</span> . <span class="variable">$json</span> . <span class="string">&apos;)}catch(e){}&apos;</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$json</span>;</span><br></pre></td></tr></table></figure>
-<p>  &#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;foo&#x51FD;&#x6570;&#x5904;&#x7406;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x4E86;&#x3002;<br>  &#x4F7F;&#x7528;ajax&#x65B9;&#x5F0F;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&#x65B9;&#x6CD5;1</span></span><br><span class="line">$.ajax({</span><br><span class="line">    dataType: <span class="string">&apos;jsonp&apos;</span>,</span><br><span class="line">    url: <span class="string">&apos;http://www.a.com/user?id=123&apos;</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>{</span><br><span class="line">        <span class="comment">//&#x5904;&#x7406;data&#x6570;&#x636E;</span></span><br><span class="line">    }</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x65B9;&#x6CD5;2</span></span><br><span class="line">$.getJSON(<span class="string">&apos;http://www.a.com/user?id=123&amp;callback=?&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>{</span><br><span class="line">    <span class="comment">//&#x5904;&#x7406;data&#x6570;&#x636E;</span></span><br><span class="line">});</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x65B9;&#x6CD5;3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">data</span>)</span>{</span><br><span class="line">    <span class="comment">//&#x5904;&#x7406;data&#x6570;&#x636E;</span></span><br><span class="line">}</span><br><span class="line">$.getScript(<span class="string">&apos;http://www.a.com/user?id=123&amp;callback=foo&apos;</span>);</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/12/reactor/">
-                事件反应堆
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-08-12
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/08/12/reactor/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/12/reactor/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>&#x6700;&#x8FD1;&#x5728;&#x7F51;&#x4E0A;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x4E8B;&#x4EF6;&#x53CD;&#x5E94;&#x5806;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;<br><a href="https://github.com/song0071000/Reactor_Implemention" target="_blank" rel="external">https://github.com/song0071000/Reactor_Implemention</a> &#x5B66;&#x4E60;&#x4E86;&#x4E0B;&#x3002;</p>
-<ul>
-<li><strong>&#x53CD;&#x5E94;&#x5806;&#x7684;&#x4F5C;&#x7528;</strong><br>&#x5728;&#x7F16;&#x5199;&#x7F51;&#x7EDC;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x7F51;&#x7EDC;&#x7684;&#x8BFB;&#x5199;&#x4E8B;&#x4EF6;&#x3001;&#x5B9A;&#x65F6;&#x5668;&#x4E8B;&#x4EF6;&#x7B49;&#x3002;&#x7F51;&#x7EDC;&#x4E8B;&#x4EF6;&#x7684;&#x6536;&#x96C6;&#x901A;&#x5E38;&#x91C7;&#x7528;select&#x3001;epoll&#x7B49;IO&#x591A;&#x8DEF;&#x590D;&#x7528;&#x6280;&#x672F;&#xFF0C;&#x5B9A;&#x65F6;&#x5668;&#x901A;&#x5E38;&#x91C7;&#x7528;&#x5C0F;&#x9876;&#x5806;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x4E9B;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x4E0D;&#x53D8;&#x7684;&#xFF0C;&#x53D8;&#x5316;&#x7684;&#x662F;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x540E;&#x7684;&#x903B;&#x8F91;&#x5904;&#x7406;&#x3002;&#x53CD;&#x5E94;&#x5806;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x628A;&#x4E8B;&#x4EF6;&#x7684;&#x6536;&#x96C6;&#x548C;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x540E;&#x7684;&#x5904;&#x7406;&#x5206;&#x5F00;&#xFF0C;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EA;&#x9700;&#x5173;&#x6CE8;&#x540E;&#x8005;&#x3002;<br>&#x4E0B;&#x56FE;&#x662F;&#x4E00;&#x4E2A;&#x53CD;&#x5E94;&#x5806;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x56FE;&#x4E2D;&#x7684;&#x5DE6;&#x534A;&#x90E8;&#x5206;&#x662F;&#x53CD;&#x5E94;&#x5806;&#xFF0C;&#x53F3;&#x534A;&#x90E8;&#x5206;&#x662F;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x3002;&#x8FD9;&#x4E2A;&#x53CD;&#x5E94;&#x5806;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x7F51;&#x7EDC;&#x548C;&#x5B9A;&#x65F6;&#x5668;&#x4E24;&#x7C7B;&#x4E8B;&#x4EF6;&#x3002;<br>&#x5176;&#x4E2D;&#xFF0C;<code>EventHandler</code>&#x7C7B;&#x662F;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7684;&#x57FA;&#x7C7B;&#xFF0C;&#x5B83;&#x6709;&#x8BFB;&#x3001;&#x5199;&#x3001;&#x5904;&#x7406;&#x9519;&#x8BEF;&#x7B49;&#x51FD;&#x6570;&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x7EE7;&#x627F;&#x8FD9;&#x4E2A;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x5B8C;&#x6210;&#x8BFB;&#x5199;&#x903B;&#x8F91;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x6CE8;&#x518C;&#x5230;&#x53CD;&#x5E94;&#x5806;&#x4E2D;&#x5373;&#x53EF;&#x3002;</li>
-<li><strong>&#x53CD;&#x5E94;&#x5806;&#x7684;&#x5B9E;&#x73B0;</strong><br>&#x5176;&#x4E2D;&#xFF0C;<code>Reactor</code>&#x7C7B;&#x662F;&#x53CD;&#x5E94;&#x5806;&#x7684;&#x57FA;&#x7C7B;&#xFF0C;&#x5B83;&#x6709;&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;&#x3001;&#x5220;&#x9664;&#x4E8B;&#x4EF6;&#x3001;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5728;&#x5B83;&#x4F9D;&#x8D56;&#x7684;&#x7C7B;&#x4E2D;&#xFF0C;&#x6709;&#x4E2A;<code>map&lt;handle_t, EventHandler *&gt; m_handlers</code>&#x6210;&#x5458;&#x53D8;&#x91CF;&#x3002;<code>EventHandler</code>&#x4E8B;&#x4EF6;&#x6CE8;&#x518C;&#x65F6;&#xFF0C;&#x5C31;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4E2D;&#xFF0C;&#x4E8B;&#x4EF6;&#x5220;&#x9664;&#x65F6;&#xFF0C;&#x5C31;&#x4ECE;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4E2D;&#x79FB;&#x9664;&#x3002;<br>&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x76D1;&#x542C;&#x4E00;&#x4E2A;socket&#xFF0C;&#x7EE7;&#x627F;<code>EventHandler</code>&#xFF0C;&#x7136;&#x540E;&#x5C06;socket&#x7684;handle&#x548C;&#x4E8B;&#x4EF6;&#x7C7B;&#x6CE8;&#x518C;&#x5230;&#x53CD;&#x5E94;&#x5806;&#x4E2D;&#x3002;<br>&#x6CE8;&#x518C;&#x662F;&#x901A;&#x8FC7;<code>Reactor</code>&#x7C7B;&#x578B;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;<code>g_reactor</code>&#x8C03;&#x7528;<code>RegisterHandler(EventHandler * handler, event_t evt)</code>&#x51FD;&#x6570;&#x3002;&#x7531;&#x4E8E;&#x5E95;&#x5C42;&#x662F;&#x91C7;&#x7528;select&#x6216;epoll&#xFF0C;&#x6CE8;&#x518C;&#x5C31;&#x662F;&#x91C7;&#x7528;select&#x6216;epoll&#x76D1;&#x542C;&#x8FD9;&#x4E9B;socket&#x3002;&#x5F53;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#xFF0C;&#x8C03;&#x7528;<code>EventHandler</code>&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5904;&#x7406;&#x8BFB;&#x5199;&#x3002;</li>
-<li><strong>&#x5B9A;&#x65F6;&#x5668;</strong><br>&#x5B9A;&#x65F6;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5C0F;&#x9876;&#x5806;<code>time_heap</code>&#xFF0C;&#x7136;&#x540E;&#x5728;&#x53CD;&#x5E94;&#x5806;&#x4E2D;&#x6709;&#x4E2A;&#x6210;&#x5458;&#x53D8;&#x91CF;<code>time_heap* m_eventtimer</code>&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x6709;&#x6DFB;&#x52A0;&#x5B9A;&#x65F6;&#x5668;&#x3001;&#x79FB;&#x9664;&#x5B9A;&#x65F6;&#x5668;&#x3001;&#x5904;&#x7406;&#x5B9A;&#x65F6;&#x5668;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x6DFB;&#x52A0;&#x5B9A;&#x65F6;&#x5668;&#x5C31;&#x662F;&#x5728;&#x5C0F;&#x9876;&#x5806;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;<code>heap_timer</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x6709;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x548C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;<br><img src="http://7xjw4u.com1.z0.glb.clouddn.com/%E4%BA%8B%E4%BB%B6%E5%8F%8D%E5%BA%94%E5%A0%86.png" alt="&#x4E8B;&#x4EF6;&#x53CD;&#x5E94;&#x5806;"></li>
-</ul>
-<hr>
-<p>&#x53CD;&#x5E94;&#x5806;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x7684;&#x8FC7;&#x7A0B;&#x7684;&#x793A;&#x610F;&#x4EE3;&#x7801;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">{</span><br><span class="line">    <span class="comment">// &#x83B7;&#x53D6;&#x5B9A;&#x65F6;&#x5668;&#x6700;&#x5C0F;&#x8FC7;&#x671F;&#x65F6;&#x95F4;</span></span><br><span class="line">    timeout = get_min_expire_from(time_heap);</span><br><span class="line">    <span class="comment">// &#x4ECE;&#x76D1;&#x542C;&#x7684;sockets&#x4E2D;&#x83B7;&#x53D6;&#x6D3B;&#x8DC3;&#x7684;socket</span></span><br><span class="line">    ready_sockets = select_from(m_handlers, timeout);</span><br><span class="line">    <span class="comment">// &#x5904;&#x7406;socket&#x7684;&#x7F51;&#x7EDC;&#x4E8B;&#x4EF6;</span></span><br><span class="line">    HandleEvents(ready_sockers);</span><br><span class="line">    <span class="comment">// &#x5904;&#x7406;&#x8FC7;&#x671F;&#x7684;&#x5B9A;&#x65F6;&#x4E8B;&#x4EF6;</span></span><br><span class="line">    HandleTimes(time_heap);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<p>&#x7531;&#x6B64;&#x53EF;&#x89C1;&#xFF0C;&#x4E8B;&#x4EF6;&#x53CD;&#x5E94;&#x5806;&#x5C06;&#x4E8B;&#x4EF6;&#x7684;&#x5904;&#x7406;&#x4ECE;&#x4E00;&#x4E2A;&#x4E3B;&#x52A8;&#x8FC7;&#x7A0B;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x88AB;&#x52A8;&#x8FC7;&#x7A0B;&#xFF1A;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x5C06;&#x60F3;&#x8981;&#x5904;&#x7406;&#x7684;&#x4E8B;&#x4EF6;&#x6CE8;&#x518C;&#x5230;&#x53CD;&#x5E94;&#x5806;&#x4E0A;&#xFF0C;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x7531;&#x53CD;&#x5E94;&#x5806;&#x53BB;&#x5904;&#x7406;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x4E3B;&#x52A8;&#x5904;&#x7406;&#x3002;</p>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-  </div>
-
-  
-  <div class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
   </div>
 
 
@@ -550,6 +276,15 @@
   <div id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <div class="site-overview">
@@ -599,6 +334,17 @@
 
       </div>
 
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数原型"><span class="nav-number">1.</span> <span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#源码分析"><span class="nav-number">2.</span> <span class="nav-text">源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#入口函数sys_select"><span class="nav-number">2.1.</span> <span class="nav-text">入口函数：sys_select</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数core_sys_select"><span class="nav-number">2.2.</span> <span class="nav-text">函数core_sys_select</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数do_select"><span class="nav-number">2.3.</span> <span class="nav-text">函数do_select</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
       
 
     </div>
@@ -661,6 +407,145 @@
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
