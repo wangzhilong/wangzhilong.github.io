@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="网络," />
+  <meta name="keywords" content="django,python," />
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-  <title> listen和accept中的sokcet关系 // wangzhilong's blog </title>
+  <title> django访问静态文件遇到的问题 // wangzhilong's blog </title>
 </head>
 
 <body>
@@ -138,7 +138,7 @@
           
           
             
-              listen和accept中的sokcet关系
+              django访问静态文件遇到的问题
             
           
         </h1>
@@ -146,7 +146,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-08-28
+          发表于 2015-09-16
         </span>
 
         
@@ -155,8 +155,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/08/28/socket/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/28/socket/"></span>
+            <a href="/2015/09/16/django-static/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/16/django-static/"></span>
             </a>
           </span>
           
@@ -170,11 +170,16 @@
       
 
       
-        <p>&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x7A0B;&#x5E8F;&#x901A;&#x5E38;&#x662F;&#xFF1A;socket()-&gt;bind()-&gt;listen(),&#x5F53;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;connect()&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;accept()&#x5904;&#x7406;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x6211;&#x5728;&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4EE5;&#x53CA;&#x7406;&#x89E3;&#x3002;</p>
-<h5 id="&#x95EE;&#x9898;1&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x7684;socket&#x662F;&#x600E;&#x4E48;&#x901A;&#x4FE1;&#x7684;">&#x95EE;&#x9898;1&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x7684;socket&#x662F;&#x600E;&#x4E48;&#x901A;&#x4FE1;&#x7684;&#xFF1F;</h5><p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;socket&#x6709;&#x4E00;&#x4E2A;&#x56DB;&#x5143;&#x7EC4;:(&#x76EE;&#x7684;ip, &#x76EE;&#x7684;port&#x3001;&#x6E90;ip&#xFF0C;&#x6E90;port)&#x3002;&#x8FD9;&#x4E2A;&#x56DB;&#x5143;&#x7EC4;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x901A;&#x4FE1;&#x3002;<br>&#x6BD4;&#x5982;&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x4E2A;80&#x7684;web&#x670D;&#x52A1;&#xFF0C;ip&#x662F;1.1.1.1&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;&#x65F6;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;socket&#x7ED1;&#x5B9A;&#x5230;80&#x7AEF;&#x53E3;&#x76D1;&#x542C;&#x3002;&#x8FD9;&#x65F6;&#x4E00;&#x4E2A;ip&#x4E3A; 2.2.2.2&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x53BB;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x65F6;&#xFF0C;&#x5148;&#x8981;&#x751F;&#x6210;&#x4E00;&#x4E2A;socket&#x3002;&#x7CFB;&#x7EDF;&#x4F1A;&#x4E3A;&#x8FD9;&#x4E2A;socket&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#xFF0C;&#x6BD4;&#x5982;65535.&#x90A3;&#x4E48;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4E2A;(1.1.1.1, 80, 2.2.2.2, 65535)&#x901A;&#x8FC7;connect()&#x8BBF;&#x95EE;&#x670D;&#x52A1;&#x7AEF;&#x3002;</p>
-<h5 id="&#x95EE;&#x9898;2accept&#x4E2D;&#x7684;socket&#x548C;listen&#x76D1;&#x542C;&#x7684;socket&#x7684;&#x7AEF;&#x53E3;&#x76F8;&#x540C;&#x5417;">&#x95EE;&#x9898;2&#xFF1A;accept&#x4E2D;&#x7684;socket&#x548C;listen&#x76D1;&#x542C;&#x7684;socket&#x7684;&#x7AEF;&#x53E3;&#x76F8;&#x540C;&#x5417;&#xFF1F;</h5><p>&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8FC7;connect()&#x8BBF;&#x95EE;&#x670D;&#x52A1;&#x7AEF;80&#xFF0C;&#x901A;&#x8FC7;3&#x6B21;&#x63E1;&#x624B;&#x540E;&#xFF0C;&#x8FDB;&#x5165;accept&#x961F;&#x5217;&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x8C03;&#x7528;accept()&#x65F6;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;socket&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;&#xFF0C;&#x4E4B;&#x524D;&#x7684;socket&#x4ECD;&#x7136;&#x7EE7;&#x7EED;&#x76D1;&#x542C;80&#x7AEF;&#x53E3;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65B0;&#x751F;&#x6210;&#x7684;&#x7AEF;&#x53E3;&#x8FD8;&#x662F;80&#x5417;&#xFF1F;&#x7B54;&#x6848;&#x662F;&#x80AF;&#x5B9A;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x5BA2;&#x6237;&#x7AEF;&#x90A3;&#x8FB9;&#x7684;socket&#x5C31;&#x65E0;&#x6CD5;&#x548C;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x901A;&#x4FE1;&#x3002;&#x770B;accept&#x6E90;&#x7801;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x4F1A;&#x62F7;&#x8D1D;&#x76D1;&#x542C;socket&#x7684;&#x4FE1;&#x606F;&#x3002;&#x56E0;&#x6B64;&#x4E24;&#x8005;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x76F8;&#x540C;&#x3002;</p>
-<h5 id="&#x95EE;&#x9898;3&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x600E;&#x4E48;&#x533A;&#x5206;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x7ED9;listen&#x7684;socket&#x8FD8;&#x662F;accept&#x7684;socket&#x7684;">&#x95EE;&#x9898;3&#xFF1A;&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x600E;&#x4E48;&#x533A;&#x5206;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x7ED9;listen&#x7684;socket&#x8FD8;&#x662F;accept&#x7684;socket&#x7684;&#xFF1F;</h5><p>&#x5982;&#x679C;&#x76D1;&#x542C;&#x7684;socket&#x548C;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x90FD;&#x662F;&#x4F7F;&#x7528;80&#x7AEF;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x7ED9;80&#x7AEF;&#x53E3;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x600E;&#x4E48;&#x533A;&#x5206;&#x662F;&#x7ED9;&#x54EA;&#x4E2A;socket&#xFF1F;&#x662F;&#x901A;&#x8FC7;&#x5BA2;&#x6237;&#x7AEF;port&#x505A;&#x8DEF;&#x7531;&#x7684;&#x3002;listen&#x4F7F;&#x7528;&#x7684;socket&#x662F;&#x6CA1;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x606F;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7AEF;&#x53E3;&#x4E3A;*&#xFF1B;&#x800C;accept&#x65F6;&#x65B0;&#x751F;&#x6210;&#x7684;socket&#x662F;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x7AEF;&#x53E3;&#x53F7;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x76D1;&#x542C;&#x7684;socket&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x662F;accet&#x540E;&#x751F;&#x6210;&#x7684;socket&#x3002;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x56DB;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5BA2;&#x6237;&#x7AEF;port&#x5C31;&#x53EF;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x606F;&#x8DEF;&#x7531;&#x5230;&#x4E86;&#x6B63;&#x786E;&#x7684;socket&#x4E0A;&#x3002;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wangzhilong@<span class="keyword">in</span>17-<span class="number">164</span>^:/mnt/mfs/$ netstat --tcp -lan | grep <span class="number">8787</span></span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">8787</span>            <span class="number">0.0</span>.<span class="number">0.0</span>:*               LISTEN</span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">10.4</span>.<span class="number">17.164</span>:<span class="number">8787</span>        <span class="number">10.2</span>.<span class="number">22.31</span>:<span class="number">64285</span>        TIME_WAIT</span><br></pre></td></tr></table></figure>
+        <p>&#x5728;&#x7528;django&#x505A;&#x7BA1;&#x7406;&#x540E;&#x53F0;&#x65F6;&#xFF0C;&#x9047;&#x5230;&#x4E86;&#x4E0B;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">16</span>/Sep/<span class="number">2015</span> <span class="number">15</span>:<span class="number">58</span>:<span class="number">38</span>] <span class="string">&quot;GET /video/static/admin/css/base.css HTTP/1.1&quot;</span> <span class="number">404</span> <span class="number">105</span></span><br><span class="line">[<span class="number">16</span>/Sep/<span class="number">2015</span> <span class="number">15</span>:<span class="number">58</span>:<span class="number">38</span>] <span class="string">&quot;GET /video/static/admin/css/changelists.css HTTP/1.1&quot;</span> <span class="number">404</span> <span class="number">112</span></span><br><span class="line">[<span class="number">16</span>/Sep/<span class="number">2015</span> <span class="number">15</span>:<span class="number">58</span>:<span class="number">38</span>] <span class="string">&quot;GET /video/static/admin/js/core.js HTTP/1.1&quot;</span> <span class="number">404</span> <span class="number">103</span></span><br><span class="line">[<span class="number">16</span>/Sep/<span class="number">2015</span> <span class="number">15</span>:<span class="number">58</span>:<span class="number">38</span>] <span class="string">&quot;GET /video/static/common/change_list.css?v=20150331 HTTP/1.1&quot;</span> <span class="number">404</span> <span class="number">109</span></span><br></pre></td></tr></table></figure></p>
+<p>&#x539F;&#x56E0;&#xFF1A;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x662F;django&#x5E93;&#x81EA;&#x5E26;&#x7684;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x5728;&#x6211;&#x4EEC;&#x670D;&#x52A1;&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x9762;&#xFF0C;&#x56E0;&#x6B64;&#x627E;&#x4E0D;&#x5230;&#x3002;<br>&#x4E0B;&#x9762;&#x4F1A;&#x5BF9;python&#x8BBF;&#x95EE;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x505A;&#x4E00;&#x4E9B;&#x8BF4;&#x660E;&#x3002;<br>&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;<br>&#xFF08;1&#xFF09; django_urls.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = patterns(<span class="string">&apos;&apos;</span>,</span><br><span class="line">    url(<span class="string">r&apos;^video/admin/&apos;</span>, include(admin.site.urls)),</span><br><span class="line">    url(<span class="string">r&apos;^video/(?P&lt;path&gt;.*)$&apos;</span>, <span class="string">&apos;pyutil.django.views.static.serve&apos;</span>,</span><br><span class="line">    {<span class="string">&apos;document_root&apos;</span>: <span class="string">&apos;.&apos;</span>}),</span><br><span class="line">&#xFF09;</span><br></pre></td></tr></table></figure></p>
+<p>document_root&#x7684;&#x503C;&#x5C31;&#x662F;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;&#x65E2;&#x5DE5;&#x7A0B;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5728;&#x6211;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#x5C31;&#x662F;video&#x3002;<br>&#x4F8B;&#x5982;&#xFF0C;&#x8BBF;&#x95EE;&#xFF1A;host/video/static/html/index.html&#xFF0C;&#x5C31;&#x4F1A;&#x8FD4;&#x56DE;video/static/html&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;index.html&#x3002;<br>(2) settings.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BASE_DIR = os.path.dirname(os.path.dirname(__file__))</span><br><span class="line">STATIC_URL = <span class="string">&apos;/video/static/&apos;</span></span><br><span class="line">STATIC_ROOT = <span class="string">&apos;static/&apos;</span></span><br><span class="line">STATICFILES_DIRS = (</span><br><span class="line">os.path.join(BASE_DIR, <span class="string">&quot;webroot/static&quot;</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>&#x5176;&#x4E2D;&#xFF0C;<strong><em>STATIC_URL</em></strong>&#x662F;&#x6211;&#x4EEC;&#x8BBF;&#x95EE;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x7531;&#x3002;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x8BF4;&#x660E;&#x4E0B;<strong><em>STATIC_ROOT</em></strong>&#x548C;<strong><em>STATICFILES_DIRS</em></strong>&#x7684;&#x5173;&#x7CFB;&#x3002;<br><strong><em>STATICFILES_DIRS</em></strong>&#x662F;&#x5B58;&#x653E;app&#x5BF9;&#x5E94;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x3002;&#x4EEC;&#x7684;&#x670D;&#x52A1;&#x662F;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;app&#xFF0C;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E5F;&#x5C31;&#x662F;&#x5B58;&#x653E;&#x6211;&#x7684;&#x670D;&#x52A1;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x3002;<br>&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x7684;app&#xFF0C;&#x5982;&#x4E0B;&#x3002;&#x6BCF;&#x4E2A;app&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x90FD;&#x5B58;&#x653E;&#x5728;&#x76F8;&#x5E94;&#x7684;<strong><em>STATICFILES_DIRS</em></strong>&#x76EE;&#x5F55;&#x4E2D;&#x3002;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = (</span><br><span class="line"><span class="string">&apos;django.contrib.admin&apos;</span>,</span><br><span class="line"><span class="string">&apos;django.contrib.auth&apos;</span>,</span><br><span class="line"><span class="string">&apos;django.contrib.contenttypes&apos;</span>,</span><br><span class="line"><span class="string">&apos;django.contrib.sessions&apos;</span>,</span><br><span class="line"><span class="string">&apos;django.contrib.messages&apos;</span>,</span><br><span class="line"><span class="string">&apos;django.contrib.staticfiles&apos;</span>,</span><br><span class="line"><span class="string">&apos;video.djangosite.service&apos;</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>&#x5F53; settiing.py&#x4E2D;DEBUG = True &#x65F6;&#xFF0C;<strong>Django&#x4F1A;&#x81EA;&#x52A8;&#x5230;&#x5404;&#x4E2A;app&#x4E2D;&#x627E;&#x5230;&#x653E;&#x5728;&#x91CC;&#x9762;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;</strong>&#x3002;<br>&#x5982;&#x679C;&#x6267;&#x884C; <code>python manage.py collectstatic</code> &#x3002;django&#x5C31;&#x4F1A;&#x6536;&#x96C6;&#x5404;&#x4E2A;app&#x7684;STATICFILES_DIRS&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x653E;&#x5230;STATIC_ROOT&#x4E2D;&#x3002;</p>
+<blockquote>
+<p><em>&#x6CE8;&#xFF1A;STATIC_ROOT&#x4E0D;&#x80FD;STATICFILES_DIRS&#x76F8;&#x540C;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x5176;&#x7684;&#x5B50;&#x76EE;&#x5F55;&#x3002;&#x5426;&#x5219;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#xFF1A;&#x201D;ImproperlyConfigured: The STATICFILES_DIRS setting should not contain the STATIC_ROOT setting&#x201D;</em></p>
+</blockquote>
+<p>&#x9488;&#x5BF9;&#x6700;&#x521D;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;DEBUG&#x6A21;&#x5F0F;&#x4E0B;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x6216;&#x8005;&#x6536;&#x96C6;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x5230;&#x5F53;&#x524D;&#x5DE5;&#x7A0B;&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
+
       
     </div>
 
@@ -182,7 +187,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/网络/"> #网络 </a>
+            <a href="/tags/django/"> #django </a>
+          
+            <a href="/tags/python/"> #python </a>
           
         </div>
       
@@ -191,13 +198,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/01/select/">select源码学习</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/25/kafka/">kafka笔记</a>
+              <a href="/2015/09/01/select/">select源码学习</a>
             
           </div>
         </div>
@@ -215,8 +220,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/08/28/socket/"
-               data-title="listen和accept中的sokcet关系" data-url="http://yoursite.com/2015/08/28/socket/">
+          <div class="ds-thread" data-thread-key="2015/09/16/django-static/"
+               data-title="django访问静态文件遇到的问题" data-url="http://yoursite.com/2015/09/16/django-static/">
           </div>
         
       </div>
@@ -307,7 +312,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题1客户端和服务端的socket是怎么通信的"><span class="nav-number">1.</span> <span class="nav-text">问题1：客户端和服务端的socket是怎么通信的？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题2accept中的socket和listen监听的socket的端口相同吗"><span class="nav-number">2.</span> <span class="nav-text">问题2：accept中的socket和listen监听的socket的端口相同吗？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题3服务端是怎么区分客户端的信息是给listen的socket还是accept的socket的"><span class="nav-number">3.</span> <span class="nav-text">问题3：服务端是怎么区分客户端的信息是给listen的socket还是accept的socket的？</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
